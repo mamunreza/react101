@@ -1,21 +1,33 @@
 import { useState } from 'react';
-import SearchBar from './components/SearchBar';
-import ImageList from './components/ImageList';
-import searchImages from './api';
+import BookCreate from './components/BookCreate';
+import BookList from './components/BookList';
 
 function App() {
-  const [images, setImages] = useState([]);
+  const [books, setBooks] = useState([]);
 
-  const handleSubmit = async (term) => {
-    const result = await searchImages(term);
+  const deleteBookById = (id) => {
+    const updatedBooks = books.filter((book) => {
+      return book.id !== id;
+    });
 
-    setImages(result);
+    setBooks(updatedBooks);
+  };
+
+  const createBook = (title) => {
+    const updatedBooks = [
+      ...books,
+      {
+        id: Math.round(Math.random() * 9999),
+        title,
+      },
+    ];
+    setBooks(updatedBooks);
   };
 
   return (
-    <div>
-      <SearchBar onSubmit={handleSubmit} />
-      <ImageList images={images} />
+    <div className="app">
+      <BookList books={books} onDelete={deleteBookById} />
+      <BookCreate onCreate={createBook} />
     </div>
   );
 }
