@@ -1,20 +1,31 @@
-import { useEffect, useContext } from 'react';
-import BookCreate from './components/BookCreate';
-import BookList from './components/BookList';
-import BooksContext from './context/books';
+import Button from './Button';
 
 function App() {
-  const { fetchBooks } = useContext(BooksContext);
-
-  useEffect(() => {
-    fetchBooks();
-  }, [fetchBooks]);
-
   return (
-    <div className="app">
-      <h1>Reading List</h1>
-      <BookList />
-      <BookCreate />
+    <div>
+      <div>
+        <Button success rounded outline>
+          Click me!!
+        </Button>
+      </div>
+      <div>
+        <Button danger outline>
+          Buy Now!
+        </Button>
+      </div>
+      <div>
+        <Button warning>See Deal!</Button>
+      </div>
+      <div>
+        <Button secondary outline>
+          Hide Ads!
+        </Button>
+      </div>
+      <div>
+        <Button secondary rounded>
+          Something!
+        </Button>
+      </div>
     </div>
   );
 }
