@@ -6,9 +6,21 @@ function App() {
     console.log('Clicked!');
   };
 
+  const handleClick = () => {
+    console.log('Clicked!');
+  };
+
   return (
     <div>
       <div>
+        <Button
+          secondary
+          outline
+          rounded
+          className="mb-5"
+          onClick={handleClick}
+        >
+          <GoBell />
         <Button
           secondary
           outline
@@ -31,6 +43,10 @@ function App() {
           <GoDatabase />
           See Deal!
         </Button>
+        <Button warning onMouseLeave={handleClick}>
+          <GoDatabase />
+          See Deal!
+        </Button>
       </div>
       <div>
         <Button secondary outline>
@@ -38,6 +54,7 @@ function App() {
         </Button>
       </div>
       <div>
+        <Button primary rounded>
         <Button primary rounded>
           Something!
         </Button>
