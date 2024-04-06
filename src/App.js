@@ -1,4 +1,4 @@
-import { GoBell, GoDownload, GoDatabase } from 'react-icons/go';
+import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 import Button from './Button';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       </div>
       <div>
         <Button danger outline onMouseEnter={handleClick}>
-          <GoDownload />
+          <GoCloudDownload />
           Buy Now!
         </Button>
       </div>
