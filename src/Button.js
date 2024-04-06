@@ -1,5 +1,4 @@
 import className from 'classnames';
-import className from 'classnames';
 
 function Button({
   children,
