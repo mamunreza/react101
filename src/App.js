@@ -1,7 +1,11 @@
-import { GoBell, GoDownload, GoDatabase } from 'react-icons/go';
+import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 import Button from './Button';
 
 function App() {
+  const handleClick = () => {
+    console.log('Clicked!');
+  };
+
   const handleClick = () => {
     console.log('Clicked!');
   };
@@ -17,16 +21,28 @@ function App() {
           onClick={handleClick}
         >
           <GoBell />
+        <Button
+          secondary
+          outline
+          rounded
+          className="mb-5"
+          onClick={handleClick}
+        >
+          <GoBell />
           Click me!!
         </Button>
       </div>
       <div>
         <Button danger outline onMouseEnter={handleClick}>
-          <GoDownload />
+          <GoCloudDownload />
           Buy Now!
         </Button>
       </div>
       <div>
+        <Button warning onMouseLeave={handleClick}>
+          <GoDatabase />
+          See Deal!
+        </Button>
         <Button warning onMouseLeave={handleClick}>
           <GoDatabase />
           See Deal!
@@ -38,6 +54,7 @@ function App() {
         </Button>
       </div>
       <div>
+        <Button primary rounded>
         <Button primary rounded>
           Something!
         </Button>
